@@ -1,0 +1,11 @@
+Options -MultiViews
+RewriteEngine On
+
+RewriteBase /auth-hom
+
+php_value session.cookie_domain localhost
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
